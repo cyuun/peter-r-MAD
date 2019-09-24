@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lab3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="iXa-rB-SRb">
+                                <rect key="frame" x="50.5" y="270.5" width="313" height="181"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="EeN-fH-wf2">
+                                        <rect key="frame" x="68.5" y="0.0" width="176" height="29"/>
+                                        <segments>
+                                            <segment title="Happy"/>
+                                            <segment title="Normal"/>
+                                            <segment title="Angry"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="iFd-p1-Alq"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ykq-ZM-p2s">
+                                        <rect key="frame" x="96.5" y="74" width="120" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Caps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jeb-3O-eUk">
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OA2-UB-l5E">
+                                                <rect key="frame" x="71" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="changeCaps:" destination="BYZ-38-t0r" eventType="valueChanged" id="GlD-sQ-Jgb"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SmX-rm-1dY">
+                                        <rect key="frame" x="17" y="151" width="279" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lQ-Ct-rX1">
+                                                <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="14" minValue="7" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="Xdj-L1-g8h">
+                                                <rect key="frame" x="77" y="0.0" width="204" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="VBd-WT-ilZ"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="vTH-7l-nZH"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="changeSize:" destination="BYZ-38-t0r" eventType="valueChanged" id="auC-pi-Sr1"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="42k-Kj-n0p">
+                                <rect key="frame" x="25" y="99" width="364" height="151.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hedgehog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnn-bh-CP5">
+                                        <rect key="frame" x="142" y="0.0" width="80.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hedge" translatesAutoresizingMaskIntoConstraints="NO" id="u01-7a-NqZ">
+                                        <rect key="frame" x="0.0" y="28.5" width="364" height="123"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="u01-7a-NqZ" secondAttribute="height" multiplier="364:123" id="mt2-Ts-CRT"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="42k-Kj-n0p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-175" id="8BM-bI-frv"/>
+                            <constraint firstItem="42k-Kj-n0p" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Aaz-La-7Fc"/>
+                            <constraint firstItem="iXa-rB-SRb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="175" id="BtO-Y7-msb"/>
+                            <constraint firstItem="42k-Kj-n0p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="Dgh-nW-W2c"/>
+                            <constraint firstItem="iXa-rB-SRb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50.5" id="Pvk-AA-iHL"/>
+                            <constraint firstItem="iXa-rB-SRb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VG7-2g-Rdj"/>
+                            <constraint firstItem="iXa-rB-SRb" firstAttribute="top" secondItem="42k-Kj-n0p" secondAttribute="bottom" constant="20" id="VPs-gs-J7y"/>
+                            <constraint firstItem="42k-Kj-n0p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b1q-0b-91f"/>
+                            <constraint firstItem="iXa-rB-SRb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="80" id="geG-9B-KIQ"/>
+                            <constraint firstItem="42k-Kj-n0p" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-50" id="m6I-1h-7OE"/>
+                            <constraint firstItem="iXa-rB-SRb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="niy-Gy-Vmp"/>
+                            <constraint firstItem="iXa-rB-SRb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="sph-Gm-YpH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="Dgh-nW-W2c"/>
+                                <exclude reference="b1q-0b-91f"/>
+                                <exclude reference="m6I-1h-7OE"/>
+                                <exclude reference="BtO-Y7-msb"/>
+                                <exclude reference="Pvk-AA-iHL"/>
+                                <exclude reference="VG7-2g-Rdj"/>
+                                <exclude reference="VPs-gs-J7y"/>
+                                <exclude reference="niy-Gy-Vmp"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="Dgh-nW-W2c"/>
+                                <exclude reference="b1q-0b-91f"/>
+                                <exclude reference="m6I-1h-7OE"/>
+                                <exclude reference="Pvk-AA-iHL"/>
+                                <exclude reference="VG7-2g-Rdj"/>
+                                <exclude reference="VPs-gs-J7y"/>
+                                <exclude reference="geG-9B-KIQ"/>
+                                <exclude reference="sph-Gm-YpH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="8BM-bI-frv"/>
+                                <exclude reference="Aaz-La-7Fc"/>
+                                <exclude reference="BtO-Y7-msb"/>
+                                <exclude reference="geG-9B-KIQ"/>
+                                <exclude reference="niy-Gy-Vmp"/>
+                                <exclude reference="sph-Gm-YpH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="capsSwitch" destination="OA2-UB-l5E" id="OLE-ji-hG6"/>
+                        <outlet property="hedgeControl" destination="EeN-fH-wf2" id="blr-o5-7J2"/>
+                        <outlet property="hedgeLabel" destination="hnn-bh-CP5" id="CtR-dC-9J9"/>
+                        <outlet property="hedgePic" destination="u01-7a-NqZ" id="YYJ-RW-PXz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.681159420289859" y="18.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hedge" width="205" height="123.33333587646484"/>
+    </resources>
+</document>
