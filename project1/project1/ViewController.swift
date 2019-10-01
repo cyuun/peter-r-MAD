@@ -9,6 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var circlesView: CirclesView!
+    
+    @IBAction func sliderMoved(_ sender: UISlider) {
+        circlesView.circleSize = CGFloat(sender.value)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
