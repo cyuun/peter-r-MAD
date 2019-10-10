@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  drawing_by_epicycles
 //
-//  Created by Peter Julian Rosenthal on 10/8/19.
-//  Copyright © 2019 Peter Julian Rosenthal. All rights reserved.
+//  Created by Peter Rosenthal on 10/8/19.
+//  Copyright © 2019 Peter Rosenthal. All rights reserved.
 //
 
 import UIKit

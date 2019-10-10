@@ -25,22 +25,93 @@
                                     <constraint firstAttribute="height" constant="256" id="jlm-FM-9qE"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="OYl-tw-0co">
+                                <rect key="frame" x="10" y="346.5" width="355" height="174"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="o7P-0R-17Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Circle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8a-vM-y4O">
+                                                <rect key="frame" x="0.0" y="0.0" width="141.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.25" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kPj-Uu-FAi">
+                                                <rect key="frame" x="211.5" y="0.0" width="145.5" height="31"/>
+                                                <connections>
+                                                    <action selector="circle0SliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="P7c-8P-RSp"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="hNz-6N-etS">
+                                        <rect key="frame" x="0.0" y="72" width="355" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Circle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqD-hp-55b">
+                                                <rect key="frame" x="0.0" y="0.0" width="141.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.25" minValue="0.25" maxValue="1.75" translatesAutoresizingMaskIntoConstraints="NO" id="EHB-tQ-xTV">
+                                                <rect key="frame" x="211.5" y="0.0" width="145.5" height="31"/>
+                                                <connections>
+                                                    <action selector="circle1SliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="y7K-MZ-zdv"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="U7r-4Q-h1W">
+                                        <rect key="frame" x="0.0" y="144" width="355" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third Circle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGB-Rf-7Ye">
+                                                <rect key="frame" x="0.0" y="0.0" width="141.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.25" maxValue="2.5" translatesAutoresizingMaskIntoConstraints="NO" id="glT-iH-fgO">
+                                                <rect key="frame" x="211.5" y="0.0" width="145.5" height="31"/>
+                                                <connections>
+                                                    <action selector="circle2SliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="9Q9-1x-fne"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Circle scale and speed factors:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXH-QZ-n2r">
+                                <rect key="frame" x="10" y="310.5" width="235.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="hXH-QZ-n2r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="6WJ-ak-Dft"/>
+                            <constraint firstItem="OYl-tw-0co" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="9MW-lw-Rfm"/>
                             <constraint firstItem="hPW-3z-sH0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D5K-qq-M4z"/>
+                            <constraint firstAttribute="trailing" secondItem="OYl-tw-0co" secondAttribute="trailing" constant="10" id="Mbt-u7-KBE"/>
                             <constraint firstItem="hPW-3z-sH0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PaN-gO-gJY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hPW-3z-sH0" secondAttribute="trailing" id="TTj-MV-F2v"/>
+                            <constraint firstItem="OYl-tw-0co" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="hgD-BZ-OQ3"/>
+                            <constraint firstItem="OYl-tw-0co" firstAttribute="top" secondItem="hXH-QZ-n2r" secondAttribute="bottom" constant="15.5" id="iRK-AZ-djF"/>
                             <constraint firstItem="hPW-3z-sH0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nds-1F-BxE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="circle0Slider" destination="kPj-Uu-FAi" id="nRF-ao-gau"/>
+                        <outlet property="circle1Slider" destination="EHB-tQ-xTV" id="FxT-uo-EwI"/>
+                        <outlet property="circle2Slider" destination="glT-iH-fgO" id="8D0-0g-xiV"/>
                         <outlet property="epicycleView" destination="hPW-3z-sH0" id="0rp-eq-RIf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="40.799999999999997" y="25.637181409295355"/>
         </scene>
     </scenes>
 </document>
