@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Ferret Selector</string>
+    <string name="text_enter_preview">Name the ferret</string>
+    <string name="button_text">Dook!</string>
+    <string name="image_description">A pixel art ferret, brown if named A-M, white if named N-Z.</string>
+</resources>
