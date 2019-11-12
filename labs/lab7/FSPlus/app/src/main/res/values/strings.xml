@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ferret Selector Plus</string>
+    <string name="edit_text_hint">Name</string>
+    <string name="toggle_button_off">Right</string>
+    <string name="toggle_button_on">Left</string>
+    <string name="radio_button_first">White</string>
+    <string name="radio_button_second">Brown</string>
+    <string name="check_box_first">Blue Eyes</string>
+    <string name="check_box_second">Two-Tone</string>
+    <string name="button_text">Dook!</string>
+</resources>
