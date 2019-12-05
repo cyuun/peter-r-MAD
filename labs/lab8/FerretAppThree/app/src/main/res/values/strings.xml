@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Ferret App Three</string>
+    <string name="label_text_1">Pick a ferret:</string>
+    <string name="button_text_1">Open in another view</string>
+    <string name="button_text_2">Find out more</string>
+    <string-array name="ferret_names">
+        <item>Ada</item>
+        <item>Wiggles</item>
+        <item>Otto</item>
+        <item>Piper</item>
+        <item>Wanda</item>
+        <item>Pabu</item>
+    </string-array>
+</resources>
