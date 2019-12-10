@@ -19,6 +19,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+// I learned about recycler views in general from Suragch on stack overflow
+//      link: https://stackoverflow.com/questions/40587168/simple-android-grid-example-using-recyclerview-with-gridlayoutmanager-like-the
+// I learned about how the recycler view relates to an android launcher and grabbing apps info and everything from Adam Sinicki from Android Authority
+//      link: https://www.androidauthority.com/make-a-custom-android-launcher-837342-837342/
 
 public class MyRecyclerViewAdapter extends androidx.recyclerview.widget.RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 

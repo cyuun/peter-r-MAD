@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- I learned about making UI background elements in this fashion from Noundla Sandeep and Eugene Brusov from stack overflow
+        link: https://stackoverflow.com/questions/5618402/how-to-draw-rounded-rectangle-in-android-ui -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 

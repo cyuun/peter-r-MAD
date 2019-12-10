@@ -13,6 +13,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
+        <!-- This is an example of something that came from the
+        Android Authority Article (see citation in MyRecyclerViewAdapter.java) -->
         <item name="android:windowShowWallpaper">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
