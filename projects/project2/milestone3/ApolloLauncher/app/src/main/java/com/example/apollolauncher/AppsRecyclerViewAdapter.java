@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
+import android.view.DragAndDropPermissions;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,8 +28,8 @@ public class AppsRecyclerViewAdapter extends androidx.recyclerview.widget.Recycl
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView textView;
-        public ImageView imageView;
+        private TextView textView;
+        private ImageView imageView;
 
         public ViewHolder(View view) {
             super(view);
@@ -43,10 +44,11 @@ public class AppsRecyclerViewAdapter extends androidx.recyclerview.widget.Recycl
             int position = getAdapterPosition();
             Context context = view.getContext();
 
-            Intent launchIntent = context.getPackageManager().getLaunchIntentForPackage(appsList.get(position).getPackageName().toString());
+            Intent launchIntent = context.getPackageManager().getLaunchIntentForPackage(appsList.get(position).getPackageName());
             context.startActivity(launchIntent);
-            Toast.makeText(context, appsList.get(position).getLabel().toString(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(context, appsList.get(position).getLabel().toString(), Toast.LENGTH_LONG).show();
         }
+
     }
 
     private LayoutInflater inflater;
@@ -54,7 +56,6 @@ public class AppsRecyclerViewAdapter extends androidx.recyclerview.widget.Recycl
 
     AppsRecyclerViewAdapter(Context context, List<AppInfo> appsList) {
         this.inflater = LayoutInflater.from(context);
-
         this.appsList = appsList;
     }
 

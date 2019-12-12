@@ -1,32 +1,51 @@
 package com.example.apollolauncher;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.usage.UsageStats;
+import android.app.usage.UsageStatsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.Window;
+import android.util.Log;
 import android.view.WindowManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView appsRecyclerView;
+    private RecyclerView recentsRecyclerView;
+    //private ConstraintLayout firstDockItem;
+    //private ConstraintLayout secondDockItem;
+    //private ConstraintLayout thirdDockItem;
+    //private ConstraintLayout fourthDockItem;
     private int displayWidth;
     private int numColumns;
     private List<AppInfo> appsList;
+    private List<AppInfo> recentsList;
 
     private final int APPS_VIEW_MARGINS = 64;
     private final int GRID_CELL_WIDTH = 64;
+
+    private final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +56,25 @@ public class MainActivity extends AppCompatActivity {
         fillAppList(this);
         alphebetizeAppList();
 
-        appsRecyclerView = findViewById(R.id.recyclerView);
+        appsRecyclerView = findViewById(R.id.appsRecyclerView);
         appsRecyclerView.setAdapter(new AppsRecyclerViewAdapter(this, appsList));
 
         displayWidth = getDisplayWidth(this);
         numColumns = (int) Math.floor(displayWidth / GRID_CELL_WIDTH) - 2;
         appsRecyclerView.setLayoutManager(new GridLayoutManager(this, numColumns));
+
+        recentsList = new ArrayList<AppInfo>();
+        fillRecentsList(this);
+
+        recentsRecyclerView = findViewById(R.id.recentsRecyclerView);
+        recentsRecyclerView.setAdapter(new RecentsRecyclerViewAdapter(this, recentsList));
+        recentsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //firstDockItem = findViewById(R.id.firstDockItem);
+        //secondDockItem = findViewById(R.id.secondDockItem);
+        //thirdDockItem = findViewById(R.id.thirdDockItem);
+        //fourthDockItem = findViewById(R.id.fourthDockItem);
+        //initializeDock();
     }
 
     private int getDisplayWidth(Context context) {
@@ -89,4 +121,19 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    private void fillRecentsList(Context context) {
+        ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> processes = am.getRunningAppProcesses();
+        for (ActivityManager.RunningAppProcessInfo process : processes) {
+            for (AppInfo app : appsList) {
+                if (process.processName.equals(app.getPackageName())) {
+                    recentsList.add(app);
+                }
+            }
+        }
+    }
+
+    //private void initializeDock() {
+    //}
 }

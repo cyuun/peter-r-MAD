@@ -6,4 +6,5 @@
 
     <color name="dockBackgroundColorLight">#DDDDDD</color>
     <color name="dockTextColor">#202020</color>
+    <color name="recentsBackgroundColor">#DDDDDD</color>
 </resources>
