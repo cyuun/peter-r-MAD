@@ -43,9 +43,9 @@ public class AppsRecyclerViewAdapter extends androidx.recyclerview.widget.Recycl
             int position = getAdapterPosition();
             Context context = view.getContext();
 
-            Intent launchIntent = context.getPackageManager().getLaunchIntentForPackage(appsList.get(position).packageName.toString());
+            Intent launchIntent = context.getPackageManager().getLaunchIntentForPackage(appsList.get(position).getPackageName().toString());
             context.startActivity(launchIntent);
-            Toast.makeText(context, appsList.get(position).label.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(context, appsList.get(position).getLabel().toString(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -67,9 +67,9 @@ public class AppsRecyclerViewAdapter extends androidx.recyclerview.widget.Recycl
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int index) {
-        String appLabel = appsList.get(index).label.toString();
-        String appPackage = appsList.get(index).packageName.toString();
-        Drawable appIcon = appsList.get(index).icon;
+        String appLabel = appsList.get(index).getLabel().toString();
+        String appPackage = appsList.get(index).getPackageName().toString();
+        Drawable appIcon = appsList.get(index).getIcon();
 
         viewHolder.textView.setText(appLabel);
         viewHolder.imageView.setImageDrawable(appIcon);
