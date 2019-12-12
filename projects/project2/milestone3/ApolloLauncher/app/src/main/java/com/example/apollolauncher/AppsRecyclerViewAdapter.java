@@ -52,12 +52,10 @@ public class AppsRecyclerViewAdapter extends androidx.recyclerview.widget.Recycl
     private LayoutInflater inflater;
     private List<AppInfo> appsList;
 
-    AppsRecyclerViewAdapter(Context context) {
+    AppsRecyclerViewAdapter(Context context, List<AppInfo> appsList) {
         this.inflater = LayoutInflater.from(context);
 
-        appsList = new ArrayList<AppInfo>();
-
-        fillAppList(context);
+        this.appsList = appsList;
     }
 
     @Override
@@ -80,23 +78,5 @@ public class AppsRecyclerViewAdapter extends androidx.recyclerview.widget.Recycl
     @Override
     public int getItemCount() {
         return appsList.size();
-    }
-
-    private void fillAppList(Context context) {
-        PackageManager pm = context.getPackageManager();
-
-        Intent intent = new Intent(Intent.ACTION_MAIN, null);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
-
-        List<ResolveInfo> allApps = pm.queryIntentActivities(intent, 0);
-        for (ResolveInfo  primApp : allApps) {
-            AppInfo app = new AppInfo();
-            app.label = primApp.loadLabel(pm);
-            app.packageName = primApp.activityInfo.packageName;
-            app.icon = primApp.activityInfo.loadIcon(pm);
-            if (!appsList.contains(app)) {
-                appsList.add(app);
-            }
-        }
     }
 }
