@@ -16,7 +16,7 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <!-- This is an example of something that came from the
-                Android Authority Article (see citation in MyRecyclerViewAdapter.java) -->
+                Android Authority Article (see citation in AppsRecyclerViewAdapter.java) -->
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />

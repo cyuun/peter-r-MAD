@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +23,7 @@ import java.util.List;
 // I learned about how the recycler view relates to an android launcher and grabbing apps info and everything from Adam Sinicki from Android Authority
 //      link: https://www.androidauthority.com/make-a-custom-android-launcher-837342-837342/
 
-public class MyRecyclerViewAdapter extends androidx.recyclerview.widget.RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
+public class AppsRecyclerViewAdapter extends androidx.recyclerview.widget.RecyclerView.Adapter<AppsRecyclerViewAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -51,26 +50,14 @@ public class MyRecyclerViewAdapter extends androidx.recyclerview.widget.Recycler
     }
 
     private LayoutInflater inflater;
-    //private AdapterView.OnItemClickListener clickListener;
     private List<AppInfo> appsList;
 
-    MyRecyclerViewAdapter(Context context) {
+    AppsRecyclerViewAdapter(Context context) {
         this.inflater = LayoutInflater.from(context);
 
-        PackageManager pm = context.getPackageManager();
         appsList = new ArrayList<AppInfo>();
 
-        Intent intent = new Intent(Intent.ACTION_MAIN, null);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
-
-        List<ResolveInfo> allApps = pm.queryIntentActivities(intent, 0);
-        for (ResolveInfo ri:allApps) {
-            AppInfo app = new AppInfo();
-            app.label = ri.loadLabel(pm);
-            app.packageName = ri.activityInfo.packageName;
-            app.icon = ri.activityInfo.loadIcon(pm);
-            appsList.add(app);
-        }
+        fillAppList(context);
     }
 
     @Override
@@ -95,11 +82,21 @@ public class MyRecyclerViewAdapter extends androidx.recyclerview.widget.Recycler
         return appsList.size();
     }
 
-    /*public void setClickListener(AdapterView.OnItemClickListener itemClickListener) {
-        this.clickListener = itemClickListener;
-    }
+    private void fillAppList(Context context) {
+        PackageManager pm = context.getPackageManager();
 
-    public interface ItemClickListener {
-        void onItemClick(View view, int position);
-    }*/
+        Intent intent = new Intent(Intent.ACTION_MAIN, null);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+
+        List<ResolveInfo> allApps = pm.queryIntentActivities(intent, 0);
+        for (ResolveInfo  primApp : allApps) {
+            AppInfo app = new AppInfo();
+            app.label = primApp.loadLabel(pm);
+            app.packageName = primApp.activityInfo.packageName;
+            app.icon = primApp.activityInfo.loadIcon(pm);
+            if (!appsList.contains(app)) {
+                appsList.add(app);
+            }
+        }
+    }
 }

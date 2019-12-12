@@ -13,9 +13,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter(this);
-        recyclerView.setAdapter(myRecyclerViewAdapter);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setAdapter(new AppsRecyclerViewAdapter(this));
         int numColumns = 4;
         recyclerView.setLayoutManager(new GridLayoutManager(this, numColumns));
 
