@@ -11,6 +11,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Window;
 import android.view.WindowManager;
 
 import java.util.ArrayList;

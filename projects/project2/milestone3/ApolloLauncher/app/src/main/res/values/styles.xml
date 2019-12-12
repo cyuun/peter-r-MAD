@@ -17,6 +17,10 @@
         Android Authority Article (see citation in AppsRecyclerViewAdapter.java) -->
         <item name="android:windowShowWallpaper">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
+
+        <!-- But then I learned from it, and started making my own stuff with it that wasn't included in their code anywhere, like this: -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
 </resources>
