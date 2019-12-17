@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Peter Rosenthal Final</string>
+    <string name="heading">Burrito Builder</string>
+    <string name="name">Name</string>
+    <string name="veggie">Veggie</string>
+    <string name="meat">Meat</string>
+    <string name="burrito">Burrito</string>
+    <string name="taco">Taco</string>
+    <string name="salsa">Salsa</string>
+    <string name="cream">Sour Cream</string>
+    <string name="cheese">Cheese</string>
+    <string name="guac">Guacamole</string>
+    <string name="build">Build</string>
+    <string name="find">Find Burrito</string>
+    <string name="web">More Info</string>
+
+    <string-array name="locations">
+        <item>The Hill</item>
+        <item>29th Street</item>
+        <item>Pearl Street</item>
+    </string-array>
 </resources>
